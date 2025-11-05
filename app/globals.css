@@ -1,0 +1,80 @@
+:root{
+  --bg: #0b0f19;
+  --card: #121826;
+  --text: #e6e8ee;
+  --muted: #9aa4b2;
+  --primary: #6ee7ff;
+  --primary-600: #22d3ee;
+  --secondary: #a78bfa;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(110,231,255,0.15), transparent),
+              radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,0.12), transparent),
+              var(--bg);
+}
+
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.hero{
+  text-align:center;
+  margin: 24px 0 36px;
+}
+.hero h1{
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 12px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p{ color: var(--muted); margin: 0 0 16px; }
+
+.cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+.btn{
+  appearance:none; border:0; cursor:pointer;
+  padding: 10px 14px; border-radius: 10px;
+  background: var(--primary-600); color: #06121b; font-weight: 700;
+  text-decoration: none; display:inline-flex; align-items:center; gap:8px;
+  transition: transform .06s ease, filter .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active{ transform: translateY(0); filter: brightness(.98); }
+.btn.btn-secondary{ background: #2a3346; color: var(--text); }
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.card h2{ margin: 0 0 12px; }
+
+.utility{ display:flex; flex-direction: column; gap: 12px; }
+.row{ display:flex; gap: 10px; flex-wrap:wrap; }
+textarea{
+  width: 100%; resize: vertical;
+  background: #0f1524; color: var(--text); border: 1px solid #222a3d;
+  padding: 12px; border-radius: 10px; outline: none;
+}
+textarea:focus{ border-color: #334064; box-shadow: 0 0 0 3px rgba(102,126,234,.15); }
+
+.stats{ display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
+.stats > div{
+  background:#0f1524; border:1px solid #222a3d; border-radius:10px; padding:10px;
+}
+
+footer{ text-align:center; margin-top: 36px; color: var(--muted); }
